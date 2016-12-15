@@ -42,6 +42,22 @@ var LinkedList = function() {
     }
     // return false if doesn't exist
     return false;
+
+    // USING RECURSION WITHOUT 'RETURN' - MUST USE A 'CONTAINER' IE VAR FOUND.
+    // node = node || list.head;
+    // var found = false;
+    // // check head node to see if the node's value is target
+    // if (node.value === target) {
+    //   return true;
+    // }
+    // // check if head has links via next property
+    // if (node.next) {
+    //   // recurse over each link
+    //   found = list.contains(target, node.next);
+    // }
+    // // return false if doesn't exist
+    // return found;
+
   };
 
   return list;
