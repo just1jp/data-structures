@@ -57,7 +57,6 @@ HashTable.prototype.remove = function(k) {
   var filtered = this._storage.get(index).filter(function(tuple) {
     return tuple[0] !== k;
   });
-  debugger;
   if (filtered.length === 0) {
     filtered = undefined;
   } 
