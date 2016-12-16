@@ -39,15 +39,30 @@ BinarySearchTree.prototype.insert = function(value) {
   findEnd(this);
 };
 
-BinarySearchTree.prototype.contains = function(value) {
+BinarySearchTree.prototype.contains = function(value, tree) {
+  tree = tree || this;
 
-  // check if this.value === value
-    //if true return true
-    //if false check if this.value < value
-      //if true repeat process on this.left.value
-      //if false repeat process on this.right.value
-  //return false
-
+  // If this.value equals value...
+  if (tree.value === value) {
+    return true;
+    // Return true
+  }
+  // If value is less than this.value...
+  if (value < tree.value) {  
+    if (!tree.left) {
+      return false;
+    }
+    // Recurse over this.left
+    return tree.left.contains(value, tree.left);
+  } else {
+  // Else recurse over this.right
+    if (!tree.right) {
+      return false;
+    }
+    return tree.right.contains(value, tree.right); 
+  }
+  // Return false
+  return false;
 };
 
 BinarySearchTree.prototype.depthFirstLog = function(func) {
