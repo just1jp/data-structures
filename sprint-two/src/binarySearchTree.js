@@ -65,13 +65,36 @@ BinarySearchTree.prototype.contains = function(value, tree) {
   return false;
 };
 
-BinarySearchTree.prototype.depthFirstLog = function(func) {
-  // iterate over tree
-    //call func on each value of tree.
-
+BinarySearchTree.prototype.depthFirstLog = function(func, tree) {
+  // recursively access each node in the tree
+  // invoke func on value of each node
+  tree = tree || this;
+  func(tree.value);
+  
+  if (tree.left) {
+    tree.left.depthFirstLog(func, tree.left);
+  }
+  if (tree.right) {
+    tree.right.depthFirstLog(func, tree.right);
+  }
 };
 
 
 /*
  * Complexity: What is the time complexity of the above functions?
  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
