@@ -73,9 +73,24 @@ var Node = function(value) {
 };
 
 /*
- * Complexity: What is the time complexity of the above functions?
-  list.addToTail() is constant 0(n) because we are simply reassigning the head property of this to another node
-  
+ * Complexity: What is the time complexity of the above functions
 
+ .contains - Linear time O(n)
+
+ .removeHead - Constant time O(1)
+
+ .addToTail - Constant time O(1)
+  
  */
+
+
+
+
+
+
+
+
+
+
+
 

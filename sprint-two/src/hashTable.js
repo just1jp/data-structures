@@ -67,6 +67,13 @@ HashTable.prototype.remove = function(k) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+
+  .remove - Worse case Linear O(n), Best case Constant O(1)
+
+  .retrieve - Worse case Linear O(n), Best case Constant O(1)
+
+  .insert - Worse case Linear O(n), Best case Constant O(1)
+
  */
 
 

@@ -46,6 +46,15 @@ treeMethods.contains = function(target) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+
+ .contains - Linear - O(n)
+
+ .addChild - Constant - O(1)
+
+
+
+
+
  // 0(n) constant - work will be the same regardless of the size of the inputs
  // 0(logn) - work will increase based on the size of the input, but don't need to potentially look at every member of the collection
  // 0(n) - work will be performed on every member of the collection
