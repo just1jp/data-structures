@@ -54,8 +54,28 @@ describe('Doubly Linked List', function() {
     doublyLinkedList.insertAtEnd(4);
     doublyLinkedList.insertAtEnd(5);
     expect(doublyLinkedList.tail.value).to.equal(5);
-    doublyLinkedList.removeTail();
+    expect(doublyLinkedList.removeTail()).to.equal(5);
     expect(doublyLinkedList.tail.value).to.equal(4);
+  });
+
+  // test for insert before
+  it('should insert node before another node', function() {
+    doublyLinkedList.insertAtEnd(5);
+    doublyLinkedList.insertAtEnd(4);
+    doublyLinkedList.insertBefore(4, 3);
+    expect(doublyLinkedList.head.value).to.equal(5);
+    expect(doublyLinkedList.tail.value).to.equal(4);
+    expect(doublyLinkedList.contains(3)).to.equal(true);
+  });
+
+  // test for insert after
+  it('should insert node after another node', function() {
+    doublyLinkedList.insertAtEnd(5);
+    doublyLinkedList.insertAtEnd(4);
+    doublyLinkedList.insertAfter(4, 3);
+    expect(doublyLinkedList.head.value).to.equal(5);
+    expect(doublyLinkedList.tail.value).to.equal(3);
+    expect(doublyLinkedList.contains(4)).to.equal(true);
   });
 
   // test for add to head
@@ -67,25 +87,6 @@ describe('Doubly Linked List', function() {
     expect(doublyLinkedList.tail.value).to.equal(4);
   });  
 
-  // test for insert before
-  it('should insert node before another node', function() {
-    doublyLinkedList.insertAtEnd(5);
-    doublyLinkedList.insertAtEnd(4);
-    doublyLinkedList.insertBefore(5, 3);
-    expect(doublyLinkedList.head.value).to.equal(3);
-    expect(doublyLinkedList.tail.value).to.equal(4);
-    expect(doublyLinkedList.contains(5)).to.equal(true);
-  });    
-
-  // test for insert after
-  it('should insert node after another node', function() {
-    doublyLinkedList.insertAtEnd(5);
-    doublyLinkedList.insertAtEnd(4);
-    doublyLinkedList.insertAfter(4, 3);
-    expect(doublyLinkedList.head.value).to.equal(5);
-    expect(doublyLinkedList.tail.value).to.equal(3);
-    expect(doublyLinkedList.contains(4)).to.equal(true);
-  });
 
 
 });
